@@ -1,0 +1,19 @@
+{
+  "name": "guias-laboratorio-dps",
+  "version": "1.0.0",
+  "description": "Este es un repositorio de guias de DPS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaimenavarrete123/guias-laboratorio-dps.git"
+  },
+  "author": "Jaime Navarrete",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jaimenavarrete123/guias-laboratorio-dps/issues"
+  },
+  "homepage": "https://github.com/jaimenavarrete123/guias-laboratorio-dps#readme"
+}
