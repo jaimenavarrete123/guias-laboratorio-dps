@@ -1,0 +1,147 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #F2F2F2;
+  font-family: 'Montserrat', sans-serif,Helvetica,Arial;
+}
+
+h1 {
+  background: #24ACF2;
+  color: #F2F2F2;
+  margin-bottom: 1em;
+  padding: .5em 0;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: .5em;
+}
+
+h3 {
+  /* background: #fff; */
+  border: 3px solid #24ACF2;
+  border-radius: 5px;
+  display: inline-block;
+  margin-bottom: 2em;
+  margin-right: 1em;
+  padding: .75em 1em;
+}
+
+#ejercicio1 {
+  margin-bottom: 7em;
+}
+
+.form1 {
+  background: #FFF;
+  box-shadow: 1px 1px 2px #000;
+  margin: 0 auto;
+  margin-bottom: 2em;
+  padding: 1.5em 1em;
+  max-width: 400px;
+  width: 75%;
+}
+
+.form1 input,
+.form1 button {
+  border: 2px solid #838383;
+  border-radius: 5px;
+  font-family: 'Montserrat', Arial, sans-serif, helvetica;
+  font-size: 16px;
+  padding: 10px 15px;
+  width: 100%;
+}
+
+.form1 input {
+  margin-bottom: 1.5em;
+}
+
+.form1 button {
+  background: #24ACF2;
+  color: #FFF;
+  cursor: pointer;
+  width: 100%;
+
+  transition: all 0.2s ease-out;
+}
+
+.form1 button:hover {
+  background: #1b83b8;
+}
+
+
+.infoEmpleados {
+  padding: 20px;
+  margin: 0 auto;
+
+  max-width: 1500px;
+  width: 100%;
+}
+
+.infoEmpleados .limpiar {
+  background: rgb(235, 56, 56);
+  border: 2px solid #FFF;
+  color: #FFF;
+  cursor: pointer;
+  font-size: 25px;
+  padding: .2em .5em;
+
+  transition: all 0.1s ease-out;
+}
+
+.infoEmpleados .limpiar:hover {
+  background: rgb(211, 51, 51);
+}
+
+.infoEmpleados table {
+  border-collapse: collapse;
+  text-align: left;
+  width: 100%;
+}
+
+.infoEmpleados th,
+.infoEmpleados td {
+  padding-top: 10px;
+}
+
+.infoEmpleados th {
+  border-bottom: 5px solid #24ACF2;
+}
+
+.infoEmpleados input {
+  border: 1px solid #212121;
+  border-radius: 3px;
+  margin: 5px;
+}
+
+.infoEmpleados .id {
+  width: 5%;
+}
+.infoEmpleados .nombre {
+  width: 40%;
+}
+.infoEmpleados .salario,
+.infoEmpleados .descuento,
+.infoEmpleados .salarioNeto {
+  width: 10%;
+}
+
+.infoEmpleados .registroTabla input {
+  font-family: 'Montserrat', sans-serif,Helvetica,Arial;
+  padding: .75em;
+  width: 90%;
+}
+
+.infoEmpleados .registroTabla .readonly {
+  background-color: rgb(233, 233, 233);
+}
+
+#ejercicio2 h1 {
+  background: #32a871;
+}

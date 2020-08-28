@@ -1,0 +1,46 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+/Guia\ 3/Ejercicios1y2/dist
+/Guia\ 3/Ejercicios1y2/tmp
+/Guia\ 3/Ejercicios1y2/out-tsc
+# Only exists if Bazel was run
+/Guia\ 3/Ejercicios1y2/bazel-out
+
+# dependencies
+/Guia\ 3/Ejercicios1y2/node_modules
+
+# profiling files
+/Guia\ 3/Ejercicios1y2/chrome-profiler-events*.json
+/Guia\ 3/Ejercicios1y2/speed-measure-plugin*.json
+
+# IDEs and editors
+/Guia\ 3/Ejercicios1y2/.idea
+/Guia\ 3/Ejercicios1y2/.project
+/Guia\ 3/Ejercicios1y2/.classpath
+/Guia\ 3/Ejercicios1y2/.c9/
+/Guia\ 3/Ejercicios1y2/*.launch
+/Guia\ 3/Ejercicios1y2/.settings/
+/Guia\ 3/Ejercicios1y2/*.sublime-workspace
+
+# IDE - VSCode
+/Guia\ 3/Ejercicios1y2/.vscode/*
+/Guia\ 3/Ejercicios1y2/!.vscode/settings.json
+/Guia\ 3/Ejercicios1y2/!.vscode/tasks.json
+/Guia\ 3/Ejercicios1y2/!.vscode/launch.json
+/Guia\ 3/Ejercicios1y2/!.vscode/extensions.json
+/Guia\ 3/Ejercicios1y2/.history/*
+
+# misc
+/Guia\ 3/Ejercicios1y2/.sass-cache
+/Guia\ 3/Ejercicios1y2/connect.lock
+/Guia\ 3/Ejercicios1y2/coverage
+/Guia\ 3/Ejercicios1y2/libpeerconnection.log
+/Guia\ 3/Ejercicios1y2/npm-debug.log
+/Guia\ 3/Ejercicios1y2/yarn-error.log
+/Guia\ 3/Ejercicios1y2/testem.log
+/Guia\ 3/Ejercicios1y2/typings
+
+# System Files
+/Guia\ 3/Ejercicios1y2/.DS_Store
+/Guia\ 3/Ejercicios1y2/Thumbs.db
