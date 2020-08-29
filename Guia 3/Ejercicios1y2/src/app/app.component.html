@@ -33,4 +33,25 @@
 
 <div id="ejercicio2">
   <h1>Ejercicio 2</h1>
+  <h2>Precio por galón de combustible</h2>
+
+  <div class="precios">
+    <p>Combustible Regular: <span>$4.05</span></p>
+    <p>Combustible Especial: <span>$4.25</span></p>
+    <p>Combustible Diesel: <span>$3.96</span></p>
+  </div>
+
+  <h2>Comprar combustible</h2>
+
+  <div id="form2" class="form form2">
+    <select id="tipoCombustible" (change)="obtenerCostoTotal()">
+      <option value="#">Seleccione el tipo de combustible</option>
+      <option value="regular">Regular</option>
+      <option value="especial">Especial</option>
+      <option value="diesel">Diesel</option>
+    </select>
+    <input type="number" id="cantCombustible" placeholder="Ingrese los galones de combustible" min="0.05" max="150" step="0.05" (change)="obtenerCostoTotal()">
+    <input type="text" id="costoTotal" class="readonly" value="$0.00" readonly>
+    <button (click)="obtenerCostoTotal()" id="comprarCombustible">Comprar</button>
+  </div>
 </div>

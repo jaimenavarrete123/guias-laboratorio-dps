@@ -21,7 +21,7 @@ h1, h2 {
 }
 
 h2 {
-  margin-bottom: .5em;
+  margin-bottom: 1em;
 }
 
 h3 {
@@ -38,18 +38,20 @@ h3 {
   margin-bottom: 7em;
 }
 
-.form1 {
+.form {
   background: #FFF;
   box-shadow: 1px 1px 2px #000;
   margin: 0 auto;
   margin-bottom: 2em;
   padding: 1.5em 1em;
+
   max-width: 400px;
   width: 75%;
 }
 
-.form1 input,
-.form1 button {
+.form input,
+.form button,
+.form select {
   border: 2px solid #838383;
   border-radius: 5px;
   font-family: 'Montserrat', Arial, sans-serif, helvetica;
@@ -58,11 +60,16 @@ h3 {
   width: 100%;
 }
 
-.form1 input {
+.form input,
+.form select {
   margin-bottom: 1.5em;
 }
 
-.form1 button {
+.form select {
+  cursor: pointer;
+}
+
+.form button {
   background: #24ACF2;
   color: #FFF;
   cursor: pointer;
@@ -71,7 +78,7 @@ h3 {
   transition: all 0.2s ease-out;
 }
 
-.form1 button:hover {
+.form button:hover {
   background: #1b83b8;
 }
 
@@ -138,10 +145,41 @@ h3 {
   width: 90%;
 }
 
-.infoEmpleados .registroTabla .readonly {
+.readonly {
   background-color: rgb(233, 233, 233);
 }
 
 #ejercicio2 h1 {
   background: #32a871;
+}
+
+/* EJERCICIO 2*/
+
+.precios {
+  background: #FFF;
+  box-shadow: 1px 1px 2px #000;
+  font-weight: bold;
+  margin: 0 auto;
+  margin-bottom: 3em;
+  padding: 1.5em 1em;
+
+  max-width: 400px;
+  width: 75%;
+}
+
+.precios p {
+  margin-bottom: 1.5em;
+}
+
+.precios span {
+  color: #2e9263;
+  font-size: 20px;
+}
+
+.form2 button {
+  background: #32A871;
+}
+
+.form2 button:hover {
+  background: #2a8b5e;
 }

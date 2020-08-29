@@ -56,5 +56,31 @@ export class AppComponent {
     nuevoSalarioNeto.value = empleadoMod.salarioNeto;
   }
 
+
   // Ejercicio 2
+
+  obtenerCostoTotal() {
+    let tipo = document.getElementById('tipoCombustible') as HTMLInputElement,
+        galones = document.getElementById('cantCombustible') as HTMLInputElement,
+        costoTotal = document.getElementById('costoTotal') as HTMLInputElement;
+
+    if(galones.value) {
+      switch(tipo.value) {
+        case 'regular':
+          costoTotal.value = '$' + (parseFloat(galones.value) * 4.05).toFixed(2).toString();
+        break;
+        case 'especial':
+          costoTotal.value = '$' + (parseFloat(galones.value) * 4.25).toFixed(2).toString();
+        break;
+        case 'diesel':
+          costoTotal.value = '$' + (parseFloat(galones.value) * 3.96).toFixed(2).toString();
+        break;
+        default:
+          costoTotal.value = 'Seleccione un tipo de combustible';
+      }
+    }
+    else {
+      costoTotal.value = 'Ingrese una cantidad correcta';
+    }
+  }
 }
