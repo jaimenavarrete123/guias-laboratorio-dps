@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { getTranslationDeclStmts } from '@angular/compiler/src/render3/view/template';
 
 @Component({
   selector: 'app-root',
@@ -65,18 +66,23 @@ export class AppComponent {
         costoTotal = document.getElementById('costoTotal') as HTMLInputElement;
 
     if(galones.value) {
-      switch(tipo.value) {
-        case 'regular':
-          costoTotal.value = '$' + (parseFloat(galones.value) * 4.05).toFixed(2).toString();
-        break;
-        case 'especial':
-          costoTotal.value = '$' + (parseFloat(galones.value) * 4.25).toFixed(2).toString();
-        break;
-        case 'diesel':
-          costoTotal.value = '$' + (parseFloat(galones.value) * 3.96).toFixed(2).toString();
-        break;
-        default:
-          costoTotal.value = 'Seleccione un tipo de combustible';
+      if(parseFloat(galones.value) >= 0.05 && parseFloat(galones.value) <= 150) {
+        switch(tipo.value) {
+          case 'regular':
+            costoTotal.value = '$' + (parseFloat(galones.value) * 4.05).toFixed(2).toString();
+          break;
+          case 'especial':
+            costoTotal.value = '$' + (parseFloat(galones.value) * 4.25).toFixed(2).toString();
+          break;
+          case 'diesel':
+            costoTotal.value = '$' + (parseFloat(galones.value) * 3.96).toFixed(2).toString();
+          break;
+          default:
+            costoTotal.value = 'Seleccione un tipo de combustible';
+        }
+      }
+      else {
+        costoTotal.value = 'Cantidad válida desde 0.05 hasta 150';
       }
     }
     else {
