@@ -68,7 +68,7 @@
             <input type="text" [(ngModel)]="selectedAlumno.lastname" placeholder="lastname" class="form-control" id="alApellido">
           </div>
           <div class="form-group">
-            <input type="text" [(ngModel)]="selectedAlumno.age" placeholder="age" class="form-control" id="alEdad">
+            <input type="number" [(ngModel)]="selectedAlumno.age" placeholder="age" class="form-control" id="alEdad" min="0">
           </div>
           <div class="form-group">
             <input type="text" [(ngModel)]="selectedAlumno.direccion" placeholder="direccion" class="form-control" id="alDireccion">
@@ -77,7 +77,7 @@
             <input type="text" [(ngModel)]="selectedAlumno.telefono" placeholder="telefono" class="form-control" id="alTelefono">
           </div>
           <div class="form-group">
-            <input type="text" [(ngModel)]="selectedAlumno.email" placeholder="email" class="form-control"  id="alEmail">
+            <input type="email" [(ngModel)]="selectedAlumno.email" placeholder="email" class="form-control"  id="alEmail">
           </div>
           <button (click)="addOrEdit()" class="btn btn-primary btn-space">Guardar</button>
           <button *ngIf="selectedAlumno.id !== 0" class="btn btn-danger" (click)="delete()">Eliminar</button>

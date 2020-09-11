@@ -20,8 +20,8 @@ export class AppComponent {
   // Arreglo del tipo Alumno, que tiene 3 registros almacenados
   alumnoArray: Alumno[] = [
     {id:1, name: "Alex", lastname: "Campos", age: 35, direccion: "Direccion1", telefono: "12345678", email: "correo1@gmail.com"},
-    {id:1, name: "Maria", lastname: "Lopez", age: 20, direccion: "Direccion2", telefono: "87654321", email: "email2@hotmail.com"},
-    {id:1, name: "Juan", lastname: "Castro", age: 25, direccion: "Direccion3", telefono: "77558820", email: "correo3@outlook.com"}
+    {id:2, name: "Maria", lastname: "Lopez", age: 20, direccion: "Direccion2", telefono: "87654321", email: "email2@hotmail.com"},
+    {id:3, name: "Juan", lastname: "Castro", age: 25, direccion: "Direccion3", telefono: "77558820", email: "correo3@outlook.com"}
   ];
 
   selectedAlumno: Alumno = {id: 0, name: '', lastname: '', age: 0 , direccion: '', telefono: '', email: ''};
@@ -40,12 +40,12 @@ export class AppComponent {
           email = document.getElementById('alEmail') as HTMLInputElement
 
       if(nombre.value && apellido.value && edad.value && direccion.value && telefono.value && email.value) {
-        if(email.validity.valid) {
+        if(email.validity.valid && edad.validity.valid) {
           this.selectedAlumno.id = this.alumnoArray.length + 1;
           this.alumnoArray.push(this.selectedAlumno);
         }
         else {
-          alert('El email no tiene el formato correcto');
+          alert('La edad y/o el email no tienen el formato correcto');
         }
       }
       else {
