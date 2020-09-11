@@ -2,6 +2,7 @@
 
 # compiled output
 #/Guia\ 3/Ejercicios1y2/dist
+
 /Guia\ 3/Ejercicios1y2/tmp
 /Guia\ 3/Ejercicios1y2/out-tsc
 # Only exists if Bazel was run
@@ -44,3 +45,51 @@
 # System Files
 /Guia\ 3/Ejercicios1y2/.DS_Store
 /Guia\ 3/Ejercicios1y2/Thumbs.db
+
+
+
+
+# compiled output
+#/Guia\ 4/crudAngular/dist
+/Guia\ 4/crudAngular/tmp
+/Guia\ 4/crudAngular/out-tsc
+# Only exists if Bazel was run
+/Guia\ 4/crudAngular/bazel-out
+
+# dependencies
+/Guia\ 4/crudAngular/node_modules
+
+# profiling files
+/Guia\ 4/crudAngular/chrome-profiler-events*.json
+/Guia\ 4/crudAngular/speed-measure-plugin*.json
+
+# IDEs and editors
+/Guia\ 4/crudAngular/.idea
+/Guia\ 4/crudAngular/.project
+/Guia\ 4/crudAngular/.classpath
+/Guia\ 4/crudAngular/.c9/
+/Guia\ 4/crudAngular/*.launch
+/Guia\ 4/crudAngular/.settings/
+/Guia\ 4/crudAngular/*.sublime-workspace
+
+# IDE - VSCode
+/Guia\ 4/crudAngular/.vscode/*
+/Guia\ 4/crudAngular/!.vscode/settings.json
+/Guia\ 4/crudAngular/!.vscode/tasks.json
+/Guia\ 4/crudAngular/!.vscode/launch.json
+/Guia\ 4/crudAngular/!.vscode/extensions.json
+/Guia\ 4/crudAngular/.history/*
+
+# misc
+/Guia\ 4/crudAngular/.sass-cache
+/Guia\ 4/crudAngular/connect.lock
+/Guia\ 4/crudAngular/coverage
+/Guia\ 4/crudAngular/libpeerconnection.log
+/Guia\ 4/crudAngular/npm-debug.log
+/Guia\ 4/crudAngular/yarn-error.log
+/Guia\ 4/crudAngular/testem.log
+/Guia\ 4/crudAngular/typings
+
+# System Files
+/Guia\ 4/crudAngular/.DS_Store
+/Guia\ 4/crudAngular/Thumbs.db

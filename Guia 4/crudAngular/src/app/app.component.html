@@ -1,0 +1,150 @@
+<!-- <div class="container">
+  <div class="jumbotron">
+    <h1>Angular con Bootstrap</h1>
+
+    <p>
+      Bootstrap es un framework de CSS que nos facilita y estandariza el desarrollo de sitios web <br>
+      Se ha implementado pensando que se adapte tanto a las pantallas de equipos de escritorio como a moviles y tablets
+    </p>
+    <p>
+      Bootstrap 4 ha sido desarrollada y es mantenida por la empresa Twitter y la ha liberado como un producto Open Source
+    </p>
+
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#dialogo1">Informacion</button>
+
+    <div class="modal fade" id="dialogo1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Informacion</h4>
+            <button type="button" class="close" data-dismiss="modal">X</button>
+          </div>
+
+          <div class="modal-body">
+            <a href="https://getbootstrap.com/">Ingresar al sitio oficial</a><br>
+            <a href="https://tutorialesprogramacionya.com/bootstrap4ya">Tutorial de Bootstrap</a>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<style>
+  .btn-space {
+    margin-right: 20px;
+  }
+</style>
+
+<nav class="navbar navbar-dark bg-primary">
+  <a href="/" class="navbar-brand"> Crud Angular SIN Base de Datos y CON Base de Datos</a>
+</nav>
+
+<!-- CRUD CON PHP Y MYSQL -->
+
+<div class="container">
+  <h2 style="color: #F2F2F2;" class="mt-4">CRUD ANGULAR CON ARREGLO</h2>
+  <div class="row">
+    <div class="col-md-8 mt-4">
+      <ul class="list-group mb-4">
+        <li *ngFor="let alumno of alumnoArray" class="list-group-item list-group-item-action" (click)="openForEdit(alumno)" [class.active]="alumno == selectedAlumno">
+          <span class="badge badge-primary">{{alumno.id}}</span> - {{alumno.name}} - {{alumno.lastname}} - {{alumno.age}}
+        </li>
+      </ul>
+
+      <div class="card">
+        <div class="card-body">
+          <div class="card-title">
+            <h3>{{selectedAlumno.id == 0 ? "Agregar nuevo alumno" : "Actualizar alumno"}}</h3>
+          </div>
+          <div class="form-group">
+            <input type="text" [(ngModel)]="selectedAlumno.name" placeholder="name" class="form-control">
+          </div>
+          <div class="form-group">
+            <input type="text" [(ngModel)]="selectedAlumno.lastname" placeholder="lastname" class="form-control">
+          </div>
+          <div class="form-group">
+            <input type="text" [(ngModel)]="selectedAlumno.age" placeholder="age" class="form-control">
+          </div>
+          <button (click)="addOrEdit()" class="btn btn-primary btn-space">Guardar</button>
+          <button *ngIf="selectedAlumno.id !== 0" class="btn btn-danger" (click)="delete()">Eliminar</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <img width="300" alt="Logo Angular" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciI
+      HZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuO
+      SA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBma
+      WxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzM
+      HoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxM
+      S43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwL
+      jl6IiAvPgogIDwvc3ZnPg==">
+    </div>
+  </div>
+</div>
+
+<!-- CRUD CON PHP Y MYSQL -->
+
+<div class="container">
+  <h2 style="color: #F2F2F2;" class="mt-4">CRUD ANGULAR PHP Y MYSQL</h2>
+  <div class="row">
+    <div class="col-md-8 mt-4">
+      <div class="card">
+        <div class="card-body">
+          <div class="container">
+            <h2>Adiministracion de articulos</h2>
+            <table class="table table-hover" *ngIf="hayRegistros(); else sinarticulos">
+              <thead>
+                <tr>
+                  <th>Codigo</th>
+                  <th>Descripcion</th>
+                  <th>Precio</th>
+                  <th>Borrar</th>
+                  <th>Seleccionar</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let art of articulos">
+                  <td>{{art.codigo}}</td>
+                  <td>{{art.descripcion}}</td>
+                  <td>{{art.precio}}</td>
+                  <td><button (click)="baja(art.codigo)" class="btn btn-danger">Borrar</button></td>
+                  <td><button (click)="seleccionar(art.codigo)" class="btn btn-warning">Seleccionar</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <ng-template #sinarticulos>
+            <p>No hay articulos</p>
+          </ng-template>
+
+          <div>
+            <div class="form-group">
+              <input type="text" [(ngModel)]="art.descripcion" placeholder="descripcion" class="form-control">
+            </div>
+            <div class="form-group">
+              <input type="number" [(ngModel)]="art.precio" placeholder="precio" class="form-control">
+            </div>
+
+            <button (click)="alta()" *ngIf="art.codigo == 0" class="btn btn-primary btn-space">Agregar</button>
+            <button (click)="modificacion()" *ngIf="art.codigo !== 0" class="btn btn-warning">Modificar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <img width="300" alt="Logo Angular" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciI
+      HZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuO
+      SA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBma
+      WxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzM
+      HoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxM
+      S43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwL
+      jl6IiAvPgogIDwvc3ZnPg==">
+    </div>
+  </div>
+</div>
