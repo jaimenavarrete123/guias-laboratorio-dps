@@ -19,12 +19,12 @@ export class AppComponent {
 
   // Arreglo del tipo Alumno, que tiene 3 registros almacenados
   alumnoArray: Alumno[] = [
-    {id:1, name: "Alex", lastname: "Campos", age: 35},
-    {id:1, name: "Maria", lastname: "Lopez", age: 20},
-    {id:1, name: "Juan", lastname: "Castro", age: 25}
+    {id:1, name: "Alex", lastname: "Campos", age: 35, direccion: "Direccion1", telefono: "12345678", email: "correo1@gmail.com"},
+    {id:1, name: "Maria", lastname: "Lopez", age: 20, direccion: "Direccion2", telefono: "87654321", email: "email2@hotmail.com"},
+    {id:1, name: "Juan", lastname: "Castro", age: 25, direccion: "Direccion3", telefono: "77558820", email: "correo3@outlook.com"}
   ];
 
-  selectedAlumno: Alumno = {id: 0, name: '', lastname: '', age: 0 };
+  selectedAlumno: Alumno = {id: 0, name: '', lastname: '', age: 0 , direccion: '', telefono: '', email: ''};
 
   openForEdit(alumno: Alumno): void {
     this.selectedAlumno = alumno;
@@ -32,17 +32,34 @@ export class AppComponent {
 
   addOrEdit(): void {
     if(this.selectedAlumno.id === 0) {
-      this.selectedAlumno.id = this.alumnoArray.length + 1;
-      this.alumnoArray.push(this.selectedAlumno);
+      let nombre = document.getElementById('alNombre') as HTMLInputElement,
+          apellido = document.getElementById('alApellido') as HTMLInputElement,
+          edad = document.getElementById('alEdad') as HTMLInputElement,
+          direccion = document.getElementById('alDireccion') as HTMLInputElement,
+          telefono = document.getElementById('alTelefono') as HTMLInputElement,
+          email = document.getElementById('alEmail') as HTMLInputElement
+
+      if(nombre.value && apellido.value && edad.value && direccion.value && telefono.value && email.value) {
+        if(email.validity.valid) {
+          this.selectedAlumno.id = this.alumnoArray.length + 1;
+          this.alumnoArray.push(this.selectedAlumno);
+        }
+        else {
+          alert('El email no tiene el formato correcto');
+        }
+      }
+      else {
+        alert('Debe rellenar todos los campos');
+      }
     }
 
-    this.selectedAlumno = {id: 0, name: '', lastname: '', age: 0 };
+    this.selectedAlumno = {id: 0, name: '', lastname: '', age: 0 , direccion: '', telefono: '', email: ''};
   }
 
   delete(): void {
     if(confirm('Esta seguro de eliminar el registro?')) {
       this.alumnoArray = this.alumnoArray.filter(alumno => alumno != this.selectedAlumno);
-      this.selectedAlumno = {id: 0, name: '', lastname: '', age: 0 };
+      this.selectedAlumno = {id: 0, name: '', lastname: '', age: 0 , direccion: '', telefono: '', email: ''};
     }
   }
 
@@ -51,16 +68,17 @@ export class AppComponent {
   // CRUD ANGULAR CON BASES DE DATOS
   //
 
-
   articulos = null;
 
   art = {
     codigo: 0,
     descripcion: null,
-    precio: null
+    precio: null,
+    proveedor: null,
+    fabricante: null
   }
 
-  constructor(private articulosServicio: ArticulosService) {}
+  constructor(private articulosServicio: ArticulosService) { }
 
   ngOnInit() {
     this.recuperarTodos();
@@ -71,13 +89,28 @@ export class AppComponent {
   }
 
   alta() {
-    this.articulosServicio.alta(this.art).subscribe(datos => {
-      if(datos['resultado'] == 'OK') {
-        alert(datos['mensaje']);
-        this.recuperarTodos();
-        this.art = {codigo: 0, descripcion: null, precio: null};
+    let descripcion = document.getElementById('artDescripcion') as HTMLInputElement,
+        precio = document.getElementById('artPrecio') as HTMLInputElement,
+        proveedor = document.getElementById('artProveedor') as HTMLInputElement,
+        fabricante = document.getElementById('artFabricante') as HTMLInputElement
+
+    if(descripcion.value && proveedor.value && fabricante.value) {
+      if(precio.validity.valid) {
+        this.articulosServicio.alta(this.art).subscribe(datos => {
+          if(datos['resultado'] == 'OK') {
+            alert(datos['mensaje']);
+            this.recuperarTodos();
+            this.art = {codigo: 0, descripcion: null, precio: null, proveedor: null, fabricante: null};
+          }
+        });
       }
-    });
+      else {
+        alert('Hay campos que no tienen el formato correcto')
+      }
+    }
+    else {
+      alert('Debe rellenar todos los elementos');
+    }
   }
 
   baja(codigo) {
@@ -92,13 +125,28 @@ export class AppComponent {
   }
 
   modificacion() {
-    this.articulosServicio.modificacion(this.art).subscribe(datos => {
-      if(datos['resultado'] == 'OK') {
-        alert(datos['mensaje']);
-        this.recuperarTodos();
-        this.art = {codigo: 0, descripcion: null, precio: null};
+    let descripcion = document.getElementById('artDescripcion') as HTMLInputElement,
+        precio = document.getElementById('artPrecio') as HTMLInputElement,
+        proveedor = document.getElementById('artProveedor') as HTMLInputElement,
+        fabricante = document.getElementById('artFabricante') as HTMLInputElement
+
+    if(descripcion.value && proveedor.value && fabricante.value) {
+      if(precio.validity.valid) {
+        this.articulosServicio.modificacion(this.art).subscribe(datos => {
+          if(datos['resultado'] == 'OK') {
+            alert(datos['mensaje']);
+            this.recuperarTodos();
+            this.art = {codigo: 0, descripcion: null, precio: null, proveedor: null, fabricante: null};
+          }
+        });
       }
-    });
+      else {
+        alert('Hay campos que no tienen el formato correcto')
+      }
+    }
+    else {
+      alert('Debe rellenar todos los elementos');
+    }
   }
 
   seleccionar(codigo) {

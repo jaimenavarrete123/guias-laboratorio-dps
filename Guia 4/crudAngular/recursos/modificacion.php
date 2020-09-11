@@ -12,8 +12,8 @@
 
   mysqli_query($con,"update articulos set descripcion='$params->descripcion',
                                           precio=$params->precio,
-                                          proveedor=$params->proveedor,
-                                          fabricante=$params->fabricante
+                                          proveedor='$params->proveedor',
+                                          fabricante='$params->fabricante'
                                           where codigo=$params->codigo");
 
 

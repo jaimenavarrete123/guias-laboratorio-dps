@@ -52,7 +52,7 @@
     <div class="col-md-8 mt-4">
       <ul class="list-group mb-4">
         <li *ngFor="let alumno of alumnoArray" class="list-group-item list-group-item-action" (click)="openForEdit(alumno)" [class.active]="alumno == selectedAlumno">
-          <span class="badge badge-primary">{{alumno.id}}</span> - {{alumno.name}} - {{alumno.lastname}} - {{alumno.age}}
+          <span class="badge badge-primary">{{alumno.id}}</span> - {{alumno.name}} - {{alumno.lastname}} - {{alumno.age}} - {{alumno.direccion}} - {{alumno.telefono}} - {{alumno.email}}
         </li>
       </ul>
 
@@ -62,13 +62,22 @@
             <h3>{{selectedAlumno.id == 0 ? "Agregar nuevo alumno" : "Actualizar alumno"}}</h3>
           </div>
           <div class="form-group">
-            <input type="text" [(ngModel)]="selectedAlumno.name" placeholder="name" class="form-control">
+            <input type="text" [(ngModel)]="selectedAlumno.name" placeholder="name" class="form-control" id="alNombre">
           </div>
           <div class="form-group">
-            <input type="text" [(ngModel)]="selectedAlumno.lastname" placeholder="lastname" class="form-control">
+            <input type="text" [(ngModel)]="selectedAlumno.lastname" placeholder="lastname" class="form-control" id="alApellido">
           </div>
           <div class="form-group">
-            <input type="text" [(ngModel)]="selectedAlumno.age" placeholder="age" class="form-control">
+            <input type="text" [(ngModel)]="selectedAlumno.age" placeholder="age" class="form-control" id="alEdad">
+          </div>
+          <div class="form-group">
+            <input type="text" [(ngModel)]="selectedAlumno.direccion" placeholder="direccion" class="form-control" id="alDireccion">
+          </div>
+          <div class="form-group">
+            <input type="text" [(ngModel)]="selectedAlumno.telefono" placeholder="telefono" class="form-control" id="alTelefono">
+          </div>
+          <div class="form-group">
+            <input type="text" [(ngModel)]="selectedAlumno.email" placeholder="email" class="form-control"  id="alEmail">
           </div>
           <button (click)="addOrEdit()" class="btn btn-primary btn-space">Guardar</button>
           <button *ngIf="selectedAlumno.id !== 0" class="btn btn-danger" (click)="delete()">Eliminar</button>
@@ -103,6 +112,8 @@
                   <th>Codigo</th>
                   <th>Descripcion</th>
                   <th>Precio</th>
+                  <th>Proveedor</th>
+                  <th>Fabricante</th>
                   <th>Borrar</th>
                   <th>Seleccionar</th>
                 </tr>
@@ -112,6 +123,8 @@
                   <td>{{art.codigo}}</td>
                   <td>{{art.descripcion}}</td>
                   <td>{{art.precio}}</td>
+                  <td>{{art.proveedor}}</td>
+                  <td>{{art.fabricante}}</td>
                   <td><button (click)="baja(art.codigo)" class="btn btn-danger">Borrar</button></td>
                   <td><button (click)="seleccionar(art.codigo)" class="btn btn-warning">Seleccionar</button></td>
                 </tr>
@@ -125,10 +138,16 @@
 
           <div>
             <div class="form-group">
-              <input type="text" [(ngModel)]="art.descripcion" placeholder="descripcion" class="form-control">
+              <input type="text" [(ngModel)]="art.descripcion" placeholder="descripcion" class="form-control" id="artDescripcion" required>
             </div>
             <div class="form-group">
-              <input type="number" [(ngModel)]="art.precio" placeholder="precio" class="form-control">
+              <input type="number" [(ngModel)]="art.precio" placeholder="precio" class="form-control" min="0" id="artPrecio" step="0.01" required>
+            </div>
+            <div class="form-group">
+              <input type="text" [(ngModel)]="art.proveedor" placeholder="proveedor" class="form-control" id="artProveedor" required>
+            </div>
+            <div class="form-group">
+              <input type="text" [(ngModel)]="art.fabricante" placeholder="fabricante" class="form-control" id="artFabricante" required>
             </div>
 
             <button (click)="alta()" *ngIf="art.codigo == 0" class="btn btn-primary btn-space">Agregar</button>
