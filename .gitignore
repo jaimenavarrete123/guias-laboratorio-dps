@@ -93,3 +93,52 @@
 # System Files
 /Guia\ 4/crudAngular/.DS_Store
 /Guia\ 4/crudAngular/Thumbs.db
+
+
+
+
+
+# compiled output
+#/Guia\ 5/crudAngularFirebase/dist
+/Guia\ 5/crudAngularFirebase/tmp
+/Guia\ 5/crudAngularFirebase/out-tsc
+# Only exists if Bazel was run
+/Guia\ 5/crudAngularFirebase/bazel-out
+
+# dependencies
+/Guia\ 5/crudAngularFirebase/node_modules
+
+# profiling files
+/Guia\ 5/crudAngularFirebase/chrome-profiler-events*.json
+/Guia\ 5/crudAngularFirebase/speed-measure-plugin*.json
+
+# IDEs and editors
+/Guia\ 5/crudAngularFirebase/.idea
+/Guia\ 5/crudAngularFirebase/.project
+/Guia\ 5/crudAngularFirebase/.classpath
+/Guia\ 5/crudAngularFirebase/.c9/
+/Guia\ 5/crudAngularFirebase/*.launch
+/Guia\ 5/crudAngularFirebase/.settings/
+/Guia\ 5/crudAngularFirebase/*.sublime-workspace
+
+# IDE - VSCode
+/Guia\ 5/crudAngularFirebase/.vscode/*
+/Guia\ 5/crudAngularFirebase/!.vscode/settings.json
+/Guia\ 5/crudAngularFirebase/!.vscode/tasks.json
+/Guia\ 5/crudAngularFirebase/!.vscode/launch.json
+/Guia\ 5/crudAngularFirebase/!.vscode/extensions.json
+/Guia\ 5/crudAngularFirebase/.history/*
+
+# misc
+/Guia\ 5/crudAngularFirebase/.sass-cache
+/Guia\ 5/crudAngularFirebase/connect.lock
+/Guia\ 5/crudAngularFirebase/coverage
+/Guia\ 5/crudAngularFirebase/libpeerconnection.log
+/Guia\ 5/crudAngularFirebase/npm-debug.log
+/Guia\ 5/crudAngularFirebase/yarn-error.log
+/Guia\ 5/crudAngularFirebase/testem.log
+/Guia\ 5/crudAngularFirebase/typings
+
+# System Files
+/Guia\ 5/crudAngularFirebase/.DS_Store
+/Guia\ 5/crudAngularFirebase/Thumbs.db
