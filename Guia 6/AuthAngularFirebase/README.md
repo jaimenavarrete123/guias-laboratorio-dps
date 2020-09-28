@@ -1,6 +1,6 @@
 # AuthAngularFirebase
 
-Link de la página en Firebase: [Crud Angular Firebase](https://authangularfirebase-d45ea.firebaseapp.com/)
+Link de la página en Firebase: [Auth Angular Firebase](https://authangularfirebase-d45ea.firebaseapp.com/)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.0.
 
