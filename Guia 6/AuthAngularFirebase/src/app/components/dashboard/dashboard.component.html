@@ -1,0 +1,115 @@
+<!-- Top navigation -->
+<nav class="navbar navbar-dark bg-dark flex-md-nowrap p-0 shadow">
+  <a class="navbar-brand col-sm-3 col-md-2 mr-0">
+    <strong>PAGINA - JAIME NAVARRETE</strong>
+  </a>
+</nav>
+
+<!-- Sidebar navigation -->
+<div class="container-fluid">
+  <div class="row">
+
+    <nav class="col-md-2 d-md-block bg-light sidebar">
+      <div class="sidebar-sticky">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link active">
+              <i class="fas fa-user"></i>User Profile
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active">
+              <i class="fas fa-graduation-cap"></i>Student
+            </a>
+          </li>
+          <!-- Calling SignOut() Api from AuthService -->
+          <li class="nav-item">
+            <a class="nav-link" (click)="authService.SignOut()">
+              <i class="fas fa-sign-out-alt"></i>Log out
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Main content -->
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+      <div class="inner-adjust">
+
+        <div class="pt-3 pb-2 mb-3 border-bottom">
+          <h1 class="h2">User Profile</h1>
+        </div>
+        <!-- Show user data when logged in -->
+        <div class="row" *ngIf="authService.userData as user">
+          <div class="col-md-12">
+            <div class="media">
+              <img class="align-self-start mr-5 img-thumbnail rounded-circle" src="{{(user.photoURL) ? user.photoURL : '/assets/dummy-user.png'}}"
+                alt="{{user.displayName}}">
+              <div class="media-body">
+                <h1>Hello: <strong>{{(user.displayName) ? user.displayName : 'User'}}</strong></h1>
+                <p>User ID: <strong>{{user.uid}}</strong></p>
+                <p>Email: <strong>{{user.email}}</strong></p>
+                <p>Email Verified: <strong>{{user.emailVerified}}</strong></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-3 pb-2 mb-3 border-bottom">
+          <h2 class="h2">Alumnos</h2>
+        </div>
+
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8 mt-4">
+              <ul class="list-group mb-4">
+                <li *ngFor="let alumno of alumnoArray" class="list-group-item list-group-item-action" (click)="openForEdit(alumno)" [class.active]="alumno == selectedAlumno">
+                  <span class="badge badge-primary">{{alumno.id}}</span> - {{alumno.name}} - {{alumno.lastname}} - {{alumno.age}} - {{alumno.direccion}} - {{alumno.telefono}} - {{alumno.email}}
+                </li>
+              </ul>
+
+              <div class="card">
+                <div class="card-body">
+                  <div class="card-title">
+                    <h3>{{selectedAlumno.id == 0 ? "Agregar nuevo alumno" : "Actualizar alumno"}}</h3>
+                  </div>
+                  <div class="form-group">
+                    <input type="text" [(ngModel)]="selectedAlumno.name" placeholder="name" class="form-control" id="alNombre">
+                  </div>
+                  <div class="form-group">
+                    <input type="text" [(ngModel)]="selectedAlumno.lastname" placeholder="lastname" class="form-control" id="alApellido">
+                  </div>
+                  <div class="form-group">
+                    <input type="number" [(ngModel)]="selectedAlumno.age" placeholder="age" class="form-control" id="alEdad" min="0">
+                  </div>
+                  <div class="form-group">
+                    <input type="text" [(ngModel)]="selectedAlumno.direccion" placeholder="direccion" class="form-control" id="alDireccion">
+                  </div>
+                  <div class="form-group">
+                    <input type="text" [(ngModel)]="selectedAlumno.telefono" placeholder="telefono" class="form-control" id="alTelefono">
+                  </div>
+                  <div class="form-group">
+                    <input type="email" [(ngModel)]="selectedAlumno.email" placeholder="email" class="form-control"  id="alEmail">
+                  </div>
+                  <button (click)="addOrEdit()" class="btn btn-primary btn-space">Guardar</button>
+                  <button *ngIf="selectedAlumno.id !== 0" class="btn btn-danger" (click)="delete()">Eliminar</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <img width="300" alt="Logo Angular" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciI
+              HZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuO
+              SA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBma
+              WxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzM
+              HoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxM
+              S43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwL
+              jl6IiAvPgogIDwvc3ZnPg==">
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+  </div>
+</div>

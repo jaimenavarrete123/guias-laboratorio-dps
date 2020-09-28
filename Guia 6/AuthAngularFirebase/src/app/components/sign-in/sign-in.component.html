@@ -1,0 +1,91 @@
+<div class="container py-5">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="row">
+        <div class="col-md-6 mx-auto">
+
+          <div class="card rounded-0">
+            <div class="card-header">
+              <h3 class="mb-0">Sign In</h3>
+            </div>
+            <div class="displayTable">
+              <div class="displayTableCell">
+                <div class="authBlock">
+
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Username" #userName required>
+                  </div>
+
+                  <div class="form-group">
+                    <input type="password" class="form-control" placeholder="Password" #userPassword required>
+                  </div>
+
+                  <div class="forgotPassword">
+                    <span routerLink="/forgot-password">Forgot Password?</span>
+                  </div>
+
+                  <br>
+
+                  <!-- Calling SignIn Api from AuthService -->
+                  <div class="form-group">
+                    <input type="button" class="btn btn-success btn-lg float-left" value="Log in"
+                      (click)="authService.SignIn(userName.value, userPassword.value)">
+                  </div>
+
+                  <br><br>
+
+                  <div class="form-group">
+                    <span class="or"><span class="orInner left">Or</span></span>
+                  </div>
+
+                  <br>
+
+                  <!-- Calling GoogleAuth Api from AuthService -->
+                  <div class="form-group">
+                    <button type="button" class="btn btn-primary btn-lg float-left" (click)="authService.GoogleAuth()">
+                      <i class="fab fa-google-plus-g"></i>
+                      Log in with Google
+                    </button>
+                  </div>
+
+                  <br><br>
+
+                  <!-- Calling FacebookAuth Api from AuthService -->
+                  <div class="form-group">
+                    <button type="button" class="btn btn-primary btn-lg float-left" (click)="authService.FacebookAuth()">
+                      <i class="fab fa-facebook-f"></i>
+                      Log in with Facebook
+                    </button>
+                  </div>
+
+                  <br><br>
+
+                  <!-- Calling TwitterAuth Api from AuthService -->
+                  <div class="form-group">
+                    <button type="button" class="btn btn-primary btn-lg float-left" (click)="authService.GithubAuth()">
+                      <i class="fab fa-github"></i>
+                      Log in with Github
+                    </button>
+                  </div>
+
+                  <br> <br>
+
+
+                </div>
+
+                <br>
+
+                <div class="redirectToLogin">
+                  <span>Don't have an account?<span class="redirect" routerLink="/register-user"> Sign Up</span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <!--/row-->
+    </div>
+    <!--/col-->
+  </div>
+</div>
