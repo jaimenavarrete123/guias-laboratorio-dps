@@ -191,3 +191,29 @@
 # System Files
 /Guia\ 6/AuthAngularFirebase/.DS_Store
 /Guia\ 6/AuthAngularFirebase/Thumbs.db
+
+
+
+
+
+
+/Guia\ 8/crudreactphp/node_modules
+/Guia\ 8/crudreactphp/.pnp
+/Guia\ 8/crudreactphp/.pnp.js
+
+# testing
+/Guia\ 8/crudreactphp/coverage
+
+# production
+/Guia\ 8/crudreactphp/build
+
+# misc
+/Guia\ 8/crudreactphp/.DS_Store
+/Guia\ 8/crudreactphp/.env.local
+/Guia\ 8/crudreactphp/.env.development.local
+/Guia\ 8/crudreactphp/.env.test.local
+/Guia\ 8/crudreactphp/.env.production.local
+
+/Guia\ 8/crudreactphp/npm-debug.log*
+/Guia\ 8/crudreactphp/yarn-debug.log*+
+/Guia\ 8/crudreactphp/yarn-error.log*

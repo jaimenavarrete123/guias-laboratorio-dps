@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ArticulosService {
 
-  url = 'https://lab-dps-jaimenavarrete.000webhostapp.com/Guia4/recursos/';
+  url = 'https://lab-dps-jaimenavarrete.000webhostapp.com/DesafioPractico2/API/';
 
   constructor(private http: HttpClient) { }
 
