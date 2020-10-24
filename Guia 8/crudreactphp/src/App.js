@@ -5,7 +5,8 @@ import axios from 'axios';
 
 function App() {
   // const baseUrl="http://localhost/apiPhpEscuela/";
-  const baseUrl="http://localhost:8080/guias-laboratorio-dps/Guia%208/crudreactphp/apiPhpEscuela/";
+  // const baseUrl="http://localhost:8080/guias-laboratorio-dps/Guia%208/crudreactphp/apiPhpEscuela/";
+  const baseUrl="https://lab-dps-jaimenavarrete.000webhostapp.com/Guia8/";
   const [data, setData] = useState([]);
   const [modalInsertar, setModalInsertar] = useState(false);
   const [modalEditar, setModalEditar] = useState(false);
@@ -110,6 +111,7 @@ function App() {
       <br />
       <button className="btn btn-success" onClick={()=>abrirCerrarModalInsertar()}>Insertar</button>
       <br /><br />
+      <p>Hecho por: Jaime Eduardo Navarrete Cubías</p>
       <br/><br/>
       <table className="table table-striped">
         <thead>
