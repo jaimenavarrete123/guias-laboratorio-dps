@@ -217,3 +217,29 @@
 /Guia\ 8/crudreactphp/npm-debug.log*
 /Guia\ 8/crudreactphp/yarn-debug.log*+
 /Guia\ 8/crudreactphp/yarn-error.log*
+
+
+
+
+
+# dependencies
+/Guia\ 9/crudreactfirebase/node_modules
+/Guia\ 9/crudreactfirebase/.pnp
+/Guia\ 9/crudreactfirebase/.pnp.js
+
+# testing
+/Guia\ 9/crudreactfirebase/coverage
+
+# production
+/Guia\ 9/crudreactfirebase/build
+
+# misc
+/Guia\ 9/crudreactfirebase/.DS_Store
+/Guia\ 9/crudreactfirebase/.env.local
+/Guia\ 9/crudreactfirebase/.env.development.local
+/Guia\ 9/crudreactfirebase/.env.test.local
+/Guia\ 9/crudreactfirebase/.env.production.local
+
+/Guia\ 9/crudreactfirebase/npm-debug.log*
+/Guia\ 9/crudreactfirebase/yarn-debug.log*
+/Guia\ 9/crudreactfirebase/yarn-error.log*
